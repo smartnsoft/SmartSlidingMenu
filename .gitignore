@@ -1,16 +1,26 @@
-*.class
-
-# Package Files #
-*.dex
-*.war
-*.ear
-*.apk
-bin/
+#Android generated
 bin
-gen/
-release/
-release
 gen
-.metadata/
+lint.xml
+
+#Eclipse
 .metadata
-*.project
+.settings
+.checkstyle
+
+#IntelliJ IDEA
+.idea
+*.iml
+*.ipr
+*.iws
+classes
+gen-external-apklibs
+
+#Maven
+target
+release.properties
+pom.xml.*
+
+#Other
+.DS_Store
+tmp
