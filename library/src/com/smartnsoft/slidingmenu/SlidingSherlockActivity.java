@@ -9,6 +9,10 @@ import com.slidingmenu.lib.SlidingMenu;
 import com.slidingmenu.lib.app.SlidingActivityBase;
 import com.slidingmenu.lib.app.SlidingActivityHelper;
 
+/**
+ * @author Jocelyn Girard
+ * @since 2013.02.05
+ */
 public class SlidingSherlockActivity
     extends com.actionbarsherlock.app.SherlockActivity
     implements SlidingActivityBase
