@@ -31,6 +31,12 @@ public abstract class SmartSlidingSherlockFragmentActivity<AggregateClass>
   private final Droid4mizer<AggregateClass, SmartSlidingSherlockFragmentActivity<AggregateClass>> droid4mizer = new Droid4mizer<AggregateClass, SmartSlidingSherlockFragmentActivity<AggregateClass>>(this, this, this, null);
 
   @Override
+  public Object getSystemService(String name)
+  {
+    return droid4mizer.getSystemService(name, super.getSystemService(name));
+  }
+
+  @Override
   public void onCreate(final Bundle savedInstanceState)
   {
     droid4mizer.onCreate(new Runnable()
