@@ -32,11 +32,11 @@ public abstract class SmartSlidingListActivity<AggregateClass>
 
   private final Droid4mizer<AggregateClass, SmartSlidingListActivity<AggregateClass>> droid4mizer = new Droid4mizer<AggregateClass, SmartSlidingListActivity<AggregateClass>>(this, this, this, null);
 
-  @Override
-  public Object getSystemService(String name)
-  {
-    return droid4mizer.getSystemService(name, super.getSystemService(name));
-  }
+  // @Override
+  // public Object getSystemService(String name)
+  // {
+  // return droid4mizer.getSystemService(name, super.getSystemService(name));
+  // }
 
   @Override
   public void onCreate(final Bundle savedInstanceState)
