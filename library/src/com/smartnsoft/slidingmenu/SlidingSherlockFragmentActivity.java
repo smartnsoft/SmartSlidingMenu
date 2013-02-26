@@ -14,7 +14,7 @@ import com.slidingmenu.lib.app.SlidingActivityHelper;
  * @author Jocelyn Girard
  * @since 2013.02.05
  */
-public class SlidingSherlockFragmentActivity
+public abstract class SlidingSherlockFragmentActivity
     extends SherlockFragmentActivity
     implements SlidingActivityBase
 {

@@ -13,7 +13,7 @@ import com.slidingmenu.lib.app.SlidingActivityHelper;
  * @author Jocelyn Girard
  * @since 2013.02.05
  */
-public class SlidingSherlockActivity
+public abstract class SlidingSherlockActivity
     extends com.actionbarsherlock.app.SherlockActivity
     implements SlidingActivityBase
 {
