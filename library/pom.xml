@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.smartnsoft</groupId>
   <artifactId>smartslidingmenu</artifactId>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.3</version>
   <packaging>apklib</packaging>
 
   <parent>
