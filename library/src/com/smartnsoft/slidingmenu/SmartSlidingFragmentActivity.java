@@ -227,6 +227,11 @@ public abstract class SmartSlidingFragmentActivity<AggregateClass>
     return droid4mizer.isInteracting();
   }
 
+  public final boolean isAlive()
+  {
+    return droid4mizer.isAlive();
+  }
+
   public void refreshBusinessObjectsAndDisplay(boolean retrieveBusinessObjects, Runnable onOver, boolean immediately)
   {
     droid4mizer.refreshBusinessObjectsAndDisplay(retrieveBusinessObjects, onOver, immediately);
