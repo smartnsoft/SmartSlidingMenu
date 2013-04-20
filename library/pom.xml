@@ -33,7 +33,7 @@
       <groupId>android.support</groupId>
       <artifactId>compatibility-v4</artifactId>
       <version>11</version>
-      <optional>true</optional>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.smartnsoft</groupId>
