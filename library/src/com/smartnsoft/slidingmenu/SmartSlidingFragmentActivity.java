@@ -21,18 +21,18 @@ import com.smartnsoft.droid4me.menu.StaticMenuCommand;
  * @author Willy Noel
  * @since 2012.11.06
  */
-
 public abstract class SmartSlidingFragmentActivity<AggregateClass>
     extends SlidingFragmentActivity
     implements SmartableActivity<AggregateClass>
 {
+
   private final Droid4mizer<AggregateClass, SmartSlidingFragmentActivity<AggregateClass>> droid4mizer = new Droid4mizer<AggregateClass, SmartSlidingFragmentActivity<AggregateClass>>(this, this, this, null);
 
-  // @Override
-  // public Object getSystemService(String name)
-  // {
-  // return droid4mizer.getSystemService(name, super.getSystemService(name));
-  // }
+  @Override
+  public Object getSystemService(String name)
+  {
+    return droid4mizer.getSystemService(name, super.getSystemService(name));
+  }
 
   @Override
   public void onCreate(final Bundle savedInstanceState)
@@ -217,6 +217,11 @@ public abstract class SmartSlidingFragmentActivity<AggregateClass>
   public final boolean isInteracting()
   {
     return droid4mizer.isInteracting();
+  }
+
+  public final boolean isAlive()
+  {
+    return droid4mizer.isAlive();
   }
 
   public void refreshBusinessObjectsAndDisplay(boolean retrieveBusinessObjects, Runnable onOver, boolean immediately)

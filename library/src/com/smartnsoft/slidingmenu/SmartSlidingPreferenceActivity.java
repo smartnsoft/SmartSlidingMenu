@@ -13,8 +13,6 @@ import com.smartnsoft.droid4me.app.AppPublics.BroadcastListener;
 import com.smartnsoft.droid4me.app.Droid4mizer;
 import com.smartnsoft.droid4me.app.SmartableActivity;
 import com.smartnsoft.droid4me.framework.ActivityResultHandler.CompositeHandler;
-import com.smartnsoft.droid4me.log.Logger;
-import com.smartnsoft.droid4me.log.LoggerFactory;
 import com.smartnsoft.droid4me.menu.MenuHandler.Composite;
 import com.smartnsoft.droid4me.menu.StaticMenuCommand;
 
@@ -27,15 +25,13 @@ public abstract class SmartSlidingPreferenceActivity<AggregateClass>
     implements SmartableActivity<AggregateClass>
 {
 
-  protected static final Logger log = LoggerFactory.getInstance("Smartable");
-
   private final Droid4mizer<AggregateClass, SmartSlidingPreferenceActivity<AggregateClass>> droid4mizer = new Droid4mizer<AggregateClass, SmartSlidingPreferenceActivity<AggregateClass>>(this, this, this, null);
 
-  // @Override
-  // public Object getSystemService(String name)
-  // {
-  // return droid4mizer.getSystemService(name, super.getSystemService(name));
-  // }
+  @Override
+  public Object getSystemService(String name)
+  {
+    return droid4mizer.getSystemService(name, super.getSystemService(name));
+  }
 
   @Override
   public void onCreate(final Bundle savedInstanceState)
@@ -202,6 +198,11 @@ public abstract class SmartSlidingPreferenceActivity<AggregateClass>
   public final boolean isInteracting()
   {
     return droid4mizer.isInteracting();
+  }
+
+  public final boolean isAlive()
+  {
+    return droid4mizer.isAlive();
   }
 
   public final void refreshBusinessObjectsAndDisplay(boolean retrieveBusinessObjects, final Runnable onOver, boolean immediately)

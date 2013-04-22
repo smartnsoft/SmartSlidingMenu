@@ -4,10 +4,12 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
 >
+
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.smartnsoft</groupId>
   <artifactId>smartslidingsherlock</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <packaging>apklib</packaging>
 
   <parent>
@@ -24,15 +26,10 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.android.annotations</groupId>
-      <artifactId>annotations</artifactId>
-      <version>21.0.1</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>android.support</groupId>
       <artifactId>compatibility-v4</artifactId>
       <version>11</version>
+      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.smartnsoft</groupId>
@@ -92,4 +89,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>

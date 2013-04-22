@@ -2,20 +2,16 @@ package com.smartnsoft.slidingmenu;
 
 import java.util.List;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 
 import com.smartnsoft.droid4me.app.AppPublics.BroadcastListener;
 import com.smartnsoft.droid4me.app.Droid4mizer;
 import com.smartnsoft.droid4me.app.SmartableActivity;
 import com.smartnsoft.droid4me.framework.ActivityResultHandler.CompositeHandler;
-import com.smartnsoft.droid4me.log.Logger;
-import com.smartnsoft.droid4me.log.LoggerFactory;
 import com.smartnsoft.droid4me.menu.MenuHandler.Composite;
 import com.smartnsoft.droid4me.menu.StaticMenuCommand;
 
@@ -28,15 +24,7 @@ public abstract class SmartSlidingSherlockFragmentActivity<AggregateClass>
     implements SmartableActivity<AggregateClass>
 {
 
-  protected static final Logger log = LoggerFactory.getInstance("Smartable");
-
   private final Droid4mizer<AggregateClass, SmartSlidingSherlockFragmentActivity<AggregateClass>> droid4mizer = new Droid4mizer<AggregateClass, SmartSlidingSherlockFragmentActivity<AggregateClass>>(this, this, this, null);
-
-  @Override
-  public LayoutInflater getLayoutInflater()
-  {
-    return (LayoutInflater) droid4mizer.getSystemService(Context.LAYOUT_INFLATER_SERVICE, super.getLayoutInflater());
-  }
 
   @Override
   public Object getSystemService(String name)
@@ -209,6 +197,11 @@ public abstract class SmartSlidingSherlockFragmentActivity<AggregateClass>
   public final boolean isInteracting()
   {
     return droid4mizer.isInteracting();
+  }
+
+  public final boolean isAlive()
+  {
+    return droid4mizer.isAlive();
   }
 
   public final void refreshBusinessObjectsAndDisplay(boolean retrieveBusinessObjects, final Runnable onOver, boolean immediately)
