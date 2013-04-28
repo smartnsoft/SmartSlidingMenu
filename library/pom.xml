@@ -9,7 +9,7 @@
 
   <groupId>com.smartnsoft</groupId>
   <artifactId>smartslidingsherlock</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
   <packaging>apklib</packaging>
 
   <parent>
@@ -39,7 +39,7 @@
     <dependency>
       <groupId>com.smartnsoft</groupId>
       <artifactId>smartactionbarsherlock</artifactId>
-      <version>4.2.2</version>
+      <version>4.2.3</version>
       <type>apklib</type>
     </dependency>
   </dependencies>
