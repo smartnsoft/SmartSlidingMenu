@@ -2,10 +2,12 @@ package com.smartnsoft.slidingmenu;
 
 import java.util.List;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -27,6 +29,12 @@ public abstract class SmartSlidingFragmentActivity<AggregateClass>
 {
 
   private final Droid4mizer<AggregateClass, SmartSlidingFragmentActivity<AggregateClass>> droid4mizer = new Droid4mizer<AggregateClass, SmartSlidingFragmentActivity<AggregateClass>>(this, this, this, null);
+
+  @Override
+  public LayoutInflater getLayoutInflater()
+  {
+    return (LayoutInflater) droid4mizer.getSystemService(Context.LAYOUT_INFLATER_SERVICE, super.getLayoutInflater());
+  }
 
   @Override
   public Object getSystemService(String name)
