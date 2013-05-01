@@ -174,11 +174,6 @@ public abstract class SmartSlidingSherlockFragmentActivity<AggregateClass>
     droid4mizer.registerBroadcastListeners(broadcastListeners);
   }
 
-  public void onBusinessObjectsRetrieved()
-  {
-    droid4mizer.onBusinessObjectsRetrieved();
-  }
-
   public int getOnSynchronizeDisplayObjectsCount()
   {
     return droid4mizer.getOnSynchronizeDisplayObjectsCount();
@@ -206,7 +201,7 @@ public abstract class SmartSlidingSherlockFragmentActivity<AggregateClass>
 
   public final void refreshBusinessObjectsAndDisplay(boolean retrieveBusinessObjects, final Runnable onOver, boolean immediately)
   {
-    refreshBusinessObjectsAndDisplayInternal(retrieveBusinessObjects, onOver, immediately, false);
+    droid4mizer.refreshBusinessObjectsAndDisplay(retrieveBusinessObjects, onOver, immediately);
   }
 
   /**
@@ -232,6 +227,15 @@ public abstract class SmartSlidingSherlockFragmentActivity<AggregateClass>
    * Own implementation.
    */
 
+  public void onBusinessObjectsRetrieved()
+  {
+  }
+
+  public List<StaticMenuCommand> getMenuCommands()
+  {
+    return null;
+  };
+
   /**
    * Same as invoking {@link #refreshBusinessObjectsAndDisplay(true, null, false)}.
    * 
@@ -241,16 +245,5 @@ public abstract class SmartSlidingSherlockFragmentActivity<AggregateClass>
   {
     refreshBusinessObjectsAndDisplay(true, null, false);
   }
-
-  void refreshBusinessObjectsAndDisplayInternal(final boolean retrieveBusinessObjects, final Runnable onOver, boolean immediately,
-      final boolean businessObjectCountAndSortingUnchanged)
-  {
-    droid4mizer.refreshBusinessObjectsAndDisplay(retrieveBusinessObjects, onOver, immediately);
-  }
-
-  public List<StaticMenuCommand> getMenuCommands()
-  {
-    return null;
-  };
 
 }

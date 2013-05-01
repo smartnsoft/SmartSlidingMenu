@@ -194,11 +194,6 @@ public abstract class SmartSlidingFragmentActivity<AggregateClass>
     droid4mizer.registerBroadcastListeners(broadcastListeners);
   }
 
-  public void onBusinessObjectsRetrieved()
-  {
-    droid4mizer.onBusinessObjectsRetrieved();
-  }
-
   public int getOnSynchronizeDisplayObjectsCount()
   {
     return droid4mizer.getOnSynchronizeDisplayObjectsCount();
@@ -252,9 +247,23 @@ public abstract class SmartSlidingFragmentActivity<AggregateClass>
    * Own implementation.
    */
 
+  public void onBusinessObjectsRetrieved()
+  {
+  }
+
   public List<StaticMenuCommand> getMenuCommands()
   {
     return null;
   };
+
+  /**
+   * Same as invoking {@link #refreshBusinessObjectsAndDisplay(true, null, false)}.
+   * 
+   * @see #refreshBusinessObjectsAndDisplay(boolean, Runnable, boolean)
+   */
+  public final void refreshBusinessObjectsAndDisplay()
+  {
+    refreshBusinessObjectsAndDisplay(true, null, false);
+  }
 
 }
