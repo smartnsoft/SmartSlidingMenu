@@ -75,14 +75,16 @@
     <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <source />
-          <target />
+          <source/>
+          <target/>
         </configuration>
       </plugin>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <executions>
           <execution>
@@ -96,7 +98,7 @@
       <plugin>
         <groupId>com.jayway.maven.plugins.android.generation2</groupId>
         <artifactId>android-maven-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.6.0</version>
         <inherited>true</inherited>
         <extensions>true</extensions>
         <configuration>
@@ -116,4 +118,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>
