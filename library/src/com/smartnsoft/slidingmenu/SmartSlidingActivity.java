@@ -1,20 +1,15 @@
 package com.smartnsoft.slidingmenu;
 
-import java.util.List;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MenuItem;
 
 import com.slidingmenu.lib.app.SlidingActivity;
 import com.smartnsoft.droid4me.app.AppPublics.BroadcastListener;
 import com.smartnsoft.droid4me.app.Droid4mizer;
 import com.smartnsoft.droid4me.app.SmartableActivity;
-import com.smartnsoft.droid4me.framework.ActivityResultHandler.CompositeHandler;
-import com.smartnsoft.droid4me.menu.MenuHandler.Composite;
-import com.smartnsoft.droid4me.menu.StaticMenuCommand;
 
 /**
  * @author Willy Noel
@@ -34,6 +29,13 @@ public abstract class SmartSlidingActivity<AggregateClass>
   }
 
   @Override
+  public void onAttachedToWindow()
+  {
+    super.onAttachedToWindow();
+    droid4mizer.onAttached(this);
+  }
+
+  @Override
   public void onCreate(final Bundle savedInstanceState)
   {
     droid4mizer.onCreate(new Runnable()
@@ -43,6 +45,13 @@ public abstract class SmartSlidingActivity<AggregateClass>
         SmartSlidingActivity.super.onCreate(savedInstanceState);
       }
     }, savedInstanceState);
+  }
+
+  @Override
+  public void onPostCreate(Bundle savedInstanceState)
+  {
+    super.onPostCreate(savedInstanceState);
+    droid4mizer.onPostCreate(savedInstanceState);
   }
 
   @Override
@@ -67,6 +76,20 @@ public abstract class SmartSlidingActivity<AggregateClass>
   }
 
   @Override
+  protected void onPostResume()
+  {
+    super.onPostResume();
+    droid4mizer.onPostResume();
+  }
+
+  @Override
+  public void onConfigurationChanged(Configuration newConfig)
+  {
+    super.onConfigurationChanged(newConfig);
+    droid4mizer.onConfigurationChanged(newConfig);
+  }
+
+  @Override
   protected void onSaveInstanceState(Bundle outState)
   {
     super.onSaveInstanceState(outState);
@@ -78,6 +101,13 @@ public abstract class SmartSlidingActivity<AggregateClass>
   {
     super.onStart();
     droid4mizer.onStart();
+  }
+
+  @Override
+  protected void onRestart()
+  {
+    super.onRestart();
+    droid4mizer.onRestart();
   }
 
   @Override
@@ -120,10 +150,42 @@ public abstract class SmartSlidingActivity<AggregateClass>
   }
 
   @Override
-  public boolean onContextItemSelected(MenuItem item)
+  public void onDetachedFromWindow()
   {
-    return droid4mizer.onContextItemSelected(super.onContextItemSelected(item), item);
+    try
+    {
+      droid4mizer.onDetached();
+    }
+    finally
+    {
+      super.onDetachedFromWindow();
+    }
   }
+
+  // @Override
+  // public boolean onCreateOptionsMenu(Menu menu)
+  // {
+  // // Taken from http://www.londatiga.net/it/android-coding-tips-how-to-create-options-menu-on-child-activity-inside-an-activitygroup/
+  // return droid4mizer.onCreateOptionsMenu(getParent() == null ? super.onCreateOptionsMenu(menu) : true, menu);
+  // }
+  //
+  // @Override
+  // public boolean onPrepareOptionsMenu(Menu menu)
+  // {
+  // return droid4mizer.onPrepareOptionsMenu(getParent() == null ? super.onPrepareOptionsMenu(menu) : true, menu);
+  // }
+  //
+  // @Override
+  // public boolean onOptionsItemSelected(MenuItem item)
+  // {
+  // return droid4mizer.onOptionsItemSelected(getParent() == null ? super.onOptionsItemSelected(item) : true, item);
+  // }
+  //
+  // @Override
+  // public boolean onContextItemSelected(MenuItem item)
+  // {
+  // return droid4mizer.onContextItemSelected(getParent() == null ? super.onContextItemSelected(item) : true, item);
+  // }
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -209,16 +271,6 @@ public abstract class SmartSlidingActivity<AggregateClass>
     return droid4mizer.shouldKeepOn();
   }
 
-  public Composite getCompositeActionHandler()
-  {
-    return droid4mizer.getCompositeActionHandler();
-  }
-
-  public CompositeHandler getCompositeActivityResultHandler()
-  {
-    return droid4mizer.getCompositeActivityResultHandler();
-  }
-
   /**
    * Own implementation.
    */
@@ -226,11 +278,6 @@ public abstract class SmartSlidingActivity<AggregateClass>
   public void onBusinessObjectsRetrieved()
   {
   }
-
-  public List<StaticMenuCommand> getMenuCommands()
-  {
-    return null;
-  };
 
   /**
    * Same as invoking {@link #refreshBusinessObjectsAndDisplay(true, null, false)}.
