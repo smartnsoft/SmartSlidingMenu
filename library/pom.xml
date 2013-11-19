@@ -7,6 +7,12 @@
 
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>com.smartnsoft</groupId>
+    <artifactId>distribution</artifactId>
+    <version>1.0</version>
+  </parent>
+
   <groupId>com.smartnsoft</groupId>
   <artifactId>smartslidingmenu</artifactId>
   <version>1.0.12</version>
@@ -14,15 +20,22 @@
   <name>SmartSlidingMenu</name>
   <description>The droid4mized SlidingMenu</description>
 
-  <parent>
-    <groupId>com.smartnsoft</groupId>
-    <artifactId>distribution</artifactId>
-    <version>1.0</version>
-  </parent>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <licenses>
+    <license>
+      <name>GNU Lesser General Public License</name>
+      <url>http://www.gnu.org/licenses/lgpl.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <organization>
+    <name><![CDATA[Smart&Soft]]></name>
+    <url>http://www.smartnsoft.com</url>
+  </organization>
 
   <developers>
     <developer>
@@ -108,7 +121,7 @@
         <extensions>true</extensions>
         <configuration>
           <sdk>
-            <platform>17</platform>
+            <platform>18</platform>
           </sdk>
         </configuration>
         <executions>
