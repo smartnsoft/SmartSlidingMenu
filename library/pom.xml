@@ -15,7 +15,7 @@
 
   <groupId>com.smartnsoft</groupId>
   <artifactId>smartslidingmenu</artifactId>
-  <version>1.0.12</version>
+  <version>1.3</version>
   <packaging>apklib</packaging>
   <name>SmartSlidingMenu</name>
   <description>The droid4mized SlidingMenu</description>

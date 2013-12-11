@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.slidingmenu.lib.app.SlidingFragmentActivity;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.smartnsoft.droid4me.app.AppPublics.BroadcastListener;
 import com.smartnsoft.droid4me.app.Droid4mizer;
 import com.smartnsoft.droid4me.app.SmartableActivity;

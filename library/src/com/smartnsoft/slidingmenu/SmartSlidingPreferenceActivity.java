@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 
-import com.slidingmenu.lib.app.SlidingPreferenceActivity;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingPreferenceActivity;
 import com.smartnsoft.droid4me.app.AppPublics.BroadcastListener;
 import com.smartnsoft.droid4me.app.Droid4mizer;
 import com.smartnsoft.droid4me.app.SmartableActivity;
